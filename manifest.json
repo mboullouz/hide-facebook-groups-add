@@ -1,0 +1,40 @@
+{
+  "name": "Fix-Facebook",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "If annoyed with awful facebook group 'join us' use this powerful  ",
+  "homepage_url": "https://github.com/mboullouz",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "src/bg/background.js"
+    ],
+    "persistent": true
+  },
+  "permissions": [
+    "https://*/* "
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*"
+      ],
+      "css": [
+        "src/inject/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://*/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
